@@ -23,8 +23,14 @@ let output = document.querySelector("#result")
 output.addEventListener("click", function(){
     try {
         display.value = eval(display.value)
+        if(!isFinite(display.value)){
+            display.value = "Cannot divide by 0"
+        }
+        // else if(isNaN(display.value)){
+        //     display.value = "Cannot divide 0 by 0"
+        // }
     } catch (error) {
-        display.value = error
+       display.error = error
     }
     
 })
